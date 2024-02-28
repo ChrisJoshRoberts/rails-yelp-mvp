@@ -9,11 +9,11 @@
 #   end
 puts 'creating restaurants'
 10.times do
-  Restaurant.new(
+  Restaurant.create(
     name: Faker::Company.name ,
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber.phone_number,
     category: ['chinese','japanese', 'italian', 'french', 'belgian'].sample
   )
 end
-puts "10 restaurant created!"
+puts "10 restaurants created!"

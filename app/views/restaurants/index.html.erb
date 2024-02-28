@@ -1,8 +1,17 @@
-<h1>Restaurants</h1>
-
-<ul>
-  <% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
-  <%= restaurant.address %>
-  <%= restaurant.category %>
-</ul>
+  <nav>
+    <h1>Restaurants</h1>
+    <p class="btn btn-primary"><%= link_to 'add', new_restaurant_path %></p>
+  </nav>
+<div class="container col-6 mt-4">
+    <% @restaurants.each do |restaurant| %>
+    <div class="p-3 mb-2 bg-light text-light-emphasis rounded" id="card">
+      <div class="left">
+      <h4 class="text-primary"><%= restaurant.name %></h4>
+      <p><%= restaurant.address %></p>
+      <p><em><%= restaurant.phone_number %></em></p>
+      <p><strong><%= restaurant.category %></strong></p>
+      </div>
+      <button class="btn btn-primary"><%= link_to 'view', restaurant_path(restaurant)%></button>
+    </div>
+    <% end %>
+</div>
